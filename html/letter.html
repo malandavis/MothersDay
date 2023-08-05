@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Letters!!</title>
+	<script>
+		const messages = [
+			"Click the button to generate a letter! There's quit a few of them, so keep clicking to see them all!",
+			"Dear Mom, I just wanted to take a moment to express my gratitude for all that you do. I love you so much! You've always believed in me and for that I am forever grateful. I know I don't call you maybe as much as you would like me to, but I want you to know that I really do love it when we talk. It's never an inconvienence to me when you want to faceTime. I love telling you about the stuff that's going on in my life. I know I kind of dropped the ball on your birthday this year, so I wanted to do something extra special for Mother's Day. I was gonna write you a letter, but I don't know how to do that, just kidding ;) so I figured I would write you a website because it's easier for me to do haha. There's a couple more messegas in here, but I really do hope you have a great Mother's Day and that everyone makes you feel loved!",
+			"You are an amazing mother and an even more amazing person. I am so lucky to have you in my life. I love how caring you are and how you always 'mother hen' me haha. It always means a lot to know that you care. You definitely have no reason to be like Beverly Goldberg and always say 'I've failed as a Mother' because you most definitely have not. Love you.",
+			"Wow! You needed another letter?? ;) I guess I can make that happen. Here are 10 Things I love about you: 1)Your sense of humor (even when its something you didn't mean to say that ends up being hilarious) 2)Your ability to show Christ-like love. 3)You always choose to be a good example. 4)No matter how tough it gets you've never abandoned your goal to be healthy and I respect the hell out of that. 5)But also how much you love food and how you're always down to try new desserts with me. 6)Your the best listener I know. 7)I'm always grateful for the money you give me even though I know you don't have to. 8)You are extremely patient. 9)You always let me figure stuff out on my own. 10)You always made sure I knew you loved me.",
+			"Always remember that I love you more than words can express.",
+			"Happy Mother's Day, Mom!",
+			"P.S. The mustache photo is definitely my favorite!"
+		];
+		let messageIndex = 0;
+
+        function generateLetter() {
+            const messageElement = document.getElementById("message");
+            messageElement.textContent = "";
+            // const words = messages[messageIndex].split(" ");
+			const words = messages[messageIndex].replace(/ /g, "\n").split("\n");
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i < words.length) {
+                messageElement.textContent += words[i] + " ";
+                i++;
+                } else {
+                clearInterval(interval);
+                }
+            }, 100);
+            messageIndex = (messageIndex + 1) % messages.length;
+        }
+
+	</script>
+	<style>
+		body {
+			background-color: #8B5FBF;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+            padding: 20px;
+		}
+
+
+		button {
+			background-color: #ffffff;
+			border: none;
+			border-radius: 25px;
+			padding: 10px 25px;
+			color: white;
+			font-size: 18px;
+			cursor: pointer;
+			margin-top: 25px;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+			transition: 0.3s;
+		}
+
+		button:hover {
+			background-color: #ff0000;
+            transform: scale(1.3);
+		}
+
+		.flower {
+			width: 50px;
+			height: 50px;
+			margin-right: 10px;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+			font-size: 50px;
+			color: #8B5FBF;
+			text-shadow: 1px 1px #ccc;
+		}
+
+        p {
+            font-size: 45px;
+            line-height: 45px;
+            margin-top: 50px;
+            max-width: 800px;
+            text-align: center;
+            color: #333;
+            font-family: 'Brush Script MT', cursive;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            height: 1000px;
+            overflow-y: auto;
+            transition: max-height 0.5s;
+        }
+
+
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<button onclick="generateLetter()"><img src="..\media\letter.png" class="flower"></button>
+		<p id="message"></p>
+	</div>
+</body>
+</html>
