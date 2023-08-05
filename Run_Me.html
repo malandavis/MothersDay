@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Mother's Day!</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #ff99cc, #ffccff);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            /* position: relative; */
+        }
+
+        .flower-border {
+            background-image: url("sunFlower.png");
+            background-repeat: repeat;
+            background-size: 120px 120px;
+        }
+
+        h1 {
+            font-family: cursive;
+            font-size: 4em;
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            text-shadow: 2px 2px 5px #ff66cc;
+            /* position: relative; */
+        }
+
+        .letter {
+            font-size: 1.5em;
+            transition: all 0.1s ease-in-out;
+            position: relative;
+            display: inline-block;
+        }
+
+        .letter:hover {
+            transform: translateY(-20px);
+            cursor: pointer;
+        }
+
+        p {
+            font-family: cursive;
+            font-size: 4em;
+            text-align: center;
+            margin-top: 50px;
+            color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 5px #ff66cc;
+            /* position: relative; */
+        }
+
+        button {
+            background: none;
+            border: none;
+            margin-top: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            outline: none;
+            z-index: 1;
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        img {
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 400px;
+            max-height: 400px; 
+        }
+
+        .flower{
+            width: 60px;
+            height: 60px;
+        }
+
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #fffc4b;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            /* margin-top: 1000px; */
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            /* position: relative; */
+            z-index: 1;
+        }
+
+        .container2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            /* margin-top: 1000px; */
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 150px;
+            /* position: relative; */
+            z-index: 1;
+        }
+
+
+    </style>
+    <script>
+        function generateRandomColor()
+        {
+            var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+            if(randomColor != "#ffffff") return randomColor;
+            else return generateRandomColor();
+        }
+    </script>
+</head>
+
+<body class="flower-border">
+    <p>
+        <span class="letter">H</span>
+        <span class="letter">a</span>
+        <span class="letter">p</span>
+        <span class="letter">p</span>
+        <span class="letter">y</span>
+        <span class="letter"> </span>
+        <span class="letter">M</span>
+        <span class="letter">o</span>
+        <span class="letter">t</span>
+        <span class="letter">h</span>
+        <span class="letter">e</span>
+        <span class="letter">r</span>
+        <span class="letter">'</span>
+        <span class="letter">s</span>
+        <span class="letter"> </span>
+        <span class="letter">D</span>
+        <span class="letter">a</span>
+        <span class="letter">y</span>
+        <span class="letter">!</span>
+    </p>
+
+    <div class="container">
+        <button><a href="video.html" target="_blank"><img src="music.png" class="flower"></a></button>
+        <button><a href="letter.html" target="_blank"><img src="letter.png" class="flower"></a></button>
+        <!-- <button><a href="gift.html" target="_blank"><img src="gift.png" class="flower"></a></button> -->
+    </div>  
+    
+    <div class="container2">
+        <img src="football.jpg">
+        <img src="family.jpg">
+        <img src="cutout.jpg">
+        <img src="jollyRanchers.jpg">
+        <img src="mustache.jpg">
+        <img src="NewOrleans.jpg">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            document.querySelectorAll('.letter').forEach(function(letter) {
+                letter.addEventListener('mouseover', function() {
+                    if(this.style.color == "rgb(255, 255, 255)")this.style.color = generateRandomColor();
+                    else this.style.color = "#ffffff";
+                    // this.style.color = generateRandomColor();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
